@@ -9,9 +9,15 @@ class StringBuilder {
     }
 
     padEnd(str) {
-        this.#value + str;
+        this.#value += str;
     }
-}
+    padStart(str) {
+        this.#value = str + this.#value
+    }
+     padBoth(str) {
+    this._value = str + this._value + str;
+    }
+      }
 const builder = new StringBuilder(".");
 console.log(builder.getValue()); // "."
 builder.padStart("^");
